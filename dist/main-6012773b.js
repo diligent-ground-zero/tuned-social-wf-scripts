@@ -1,1 +1,0 @@
-"use strict";const h="modulepreload",m=function(r){return"/"+r},a={},v=function(i,d,u){return i()};const c=()=>{window.location.pathname&&v(()=>Promise.resolve().then(()=>require("./index-5d9a86e6.js")),void 0).then(r=>{r.initSwipers()})};document.readyState==="loading"?document.addEventListener("DOMContentLoaded",c):c();

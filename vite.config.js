@@ -16,11 +16,10 @@ export default defineConfig({
     assetsDir: '',
     cssCodeSplit: false,
     rollupOptions: {
-      input: resolve(__dirname, 'src/scripts/main.js'),
-      output: {
-        dir: 'dist',
-        format: 'cjs',
+      input: {
+        main: resolve(__dirname, 'src/scripts/main.js'),
       },
+      output: {},
       preserveEntrySignatures: 'exports-only',
       external: ['jquery'],
     },
