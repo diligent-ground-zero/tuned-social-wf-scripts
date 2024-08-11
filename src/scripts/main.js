@@ -1,18 +1,16 @@
-import '../styles/style.css';
+import '../styles/global.css';
 import '../styles/home.css';
-import '../styles/privacy-pages.css';
-import '../styles/articles.css';
 
-import {
-  setCurrentYearLabel,
-  populateHiddenInputFields,
-  mountOnResizeListener,
-  saveCampaignUtmPatameters,
-} from './global/globalFunctions';
+const init = () => {
+  if (window.location.pathname) {
+    import('./home').then((module) => {
+      module.initSwipers();
+    });
+  }
+};
 
-document.addEventListener('DOMContentLoaded', () => {
-  setCurrentYearLabel();
-  populateHiddenInputFields();
-  mountOnResizeListener();
-  saveCampaignUtmPatameters();
-});
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}

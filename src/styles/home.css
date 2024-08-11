@@ -1,4 +1,29 @@
-img.hero-headline-image {
-  aspect-ratio: 2.9/1;
-  object-fit: cover;
+#testimonials-slider .swiper-wrapper {
+  transition-timing-function: ease-in-out;
+}
+
+#testimonials-slider .swiper-wrapper .swiper-slide {
+  transition: opacity 0.3s ease-in-out;
+}
+
+#testimonials-slider .swiper-wrapper .swiper-slide:not(.swiper-slide-active) {
+  opacity: 0.4;
+}
+
+#testimonials-slider .testimonials-pagination {
+  display: flex;
+  gap: 12px;
+}
+
+#testimonials-slider .testimonials-pagination .swiper-pagination-bullet {
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#testimonials-slider .testimonials-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: var(--base-color-neutral--black);
+  color: white;
 }
