@@ -70,14 +70,14 @@ export const initSwipers = () => {
       spaceBetween: 75,
       grabCursor: false,
       centeredSlides: true,
+      loop: true,
+      modules: [Autoplay, Pagination],
       pagination: {
         el: '.testimonials-pagination',
         renderBullet: function (index, className) {
           return '<span class="' + className + '">' + (index + 1) + '</span>';
         },
       },
-      loop: true,
-      modules: [Autoplay, Pagination],
       breakpoints: {
         1240: {
           spaceBetween: 75,
@@ -85,8 +85,7 @@ export const initSwipers = () => {
         },
       },
       autoplay: {
-        delay: 5000, // Autoplay delay in milliseconds
-        disableOnInteraction: true, // Disable autoplay on user interaction
+        delay: 3500, // Autoplay delay in milliseconds
       },
       allowTouchMove: false, // Prevent swiper from being swiped by user
     });
