@@ -1,5 +1,6 @@
 import '../styles/global.css';
 import '../styles/home.css';
+import '../styles/blog.css';
 
 const init = () => {
   if (window.location.pathname) {

@@ -1,0 +1,7 @@
+.radio-button-field-2.w-radio:has(.w-form-formradioinput.w--redirected-checked) {
+  border-bottom: 2px solid var(--base-color-brand--purple-light);
+}
+
+.radio-button-field-2.w-radio .w--redirected-checked ~ .blog_category.all_blogs {
+  color: var(--base-color-brand--purple-light);
+}
