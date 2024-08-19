@@ -60,10 +60,31 @@ export const initSwipers = () => {
 
     logoCarousels.forEach((carousel, index) => {
       new Swiper(carousel, {
-        slidesPerView: '3.5',
+        slidesPerView: '1',
         loop: true,
         speed: 3000,
-        spaceBetween: 15,
+        breakpoints: {
+          275: {
+            slidesPerView: '1.5',
+            spaceBetween: 20,
+          },
+          325: {
+            slidesPerView: '2',
+            spaceBetween: 20,
+          },
+          400: {
+            slidesPerView: '2.5',
+            spaceBetween: 20,
+          },
+          500: {
+            slidesPerView: '3',
+            spaceBetween: 20,
+          },
+          600: {
+            slidesPerView: '3.5',
+            spaceBetween: 20,
+          },
+        },
         modules: [Autoplay],
         autoplay: {
           delay: 0,
