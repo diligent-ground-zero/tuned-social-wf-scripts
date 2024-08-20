@@ -2,6 +2,10 @@
   will-change: transform;
 }
 
+#testimonials-slider .slider_mask {
+  pointer-events: none;
+}
+
 #testimonials-slider .swiper-wrapper .swiper-slide {
   transition: opacity 1.2s ease-in-out, transform 1.5s ease-in;
   transform: scale(0.9);

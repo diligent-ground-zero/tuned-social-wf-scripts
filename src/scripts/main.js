@@ -5,9 +5,13 @@ import '../styles/cookie.css';
 import './cookies/cookieconsent-config.js';
 
 const init = () => {
-  if (window.location.pathname) {
-    import('./home').then((module) => {
-      module.initSwipers();
+  import('./global/index.js').then((module) => {
+    module.initSwipers();
+  });
+
+  if (window.location.pathname.includes('linkedin-ads-lab')) {
+    import('./blog/blog.js').then((module) => {
+      module.initBlog();
     });
   }
 };

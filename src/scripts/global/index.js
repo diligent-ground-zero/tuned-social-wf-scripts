@@ -10,11 +10,11 @@ export const initSwipers = () => {
 
   function initSpinningAdsSwiper() {
     new Swiper('#loop-swiper-1-static, #loop-swiper-2-static', {
-      spaceBetween: 40,
+      spaceBetween: 10,
       grabCursor: false,
       a11y: false,
       freeMode: false,
-      speed: 6000,
+      speed: 7000,
       centeredSlides: true,
       loop: true,
       allowTouchMove: false,
@@ -24,6 +24,11 @@ export const initSwipers = () => {
         delay: 0,
         disableOnInteraction: false,
         pauseOnMouseEnter: false,
+      },
+      breakpoints: {
+        1280: {
+          spaceBetween: 15,
+        },
       },
     });
   }
@@ -49,14 +54,15 @@ export const initSwipers = () => {
         },
       },
       autoplay: {
-        delay: 3500, // Autoplay delay in milliseconds
+        delay: 2500, // Autoplay delay in milliseconds
+        pauseOnMouseEnter: true,
       },
       allowTouchMove: true,
     });
   }
 
   function initLogosSwiper() {
-    const logoCarousels = document.querySelectorAll('#ed');
+    const logoCarousels = document.querySelectorAll('.logo-carousel');
 
     logoCarousels.forEach((carousel, index) => {
       new Swiper(carousel, {
