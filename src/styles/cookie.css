@@ -1,0 +1,20 @@
+#cc-main {
+    --cc-font-family: Manrope;
+
+    --cc-primary-color: #000000;
+    --cc-secondary-color: #0E0935;
+
+    --cc-btn-primary-bg: #462CFF;
+    --cc-btn-primary-border-color: var(--cc-btn-primary-bg);
+    --cc-btn-primary-hover-bg: #2200ff;
+    --cc-btn-primary-hover-border-color: var(--cc-btn-primary-hover-bg);
+
+    --cc-btn-secondary-bg: #eaeff2;
+    --cc-btn-secondary-border-color: var(--cc-btn-secondary-bg);
+    --cc-btn-secondary-hover-bg: #d7d5ed;
+    --cc-btn-secondary-hover-border-color: #E5E3FC;
+
+    --cc-toggle-on-bg: var(--cc-btn-primary-bg);
+
+    --cc-btn-border-radius: 8px;
+}

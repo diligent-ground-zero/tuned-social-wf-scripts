@@ -1,6 +1,8 @@
 import '../styles/global.css';
 import '../styles/home.css';
 import '../styles/blog.css';
+import '../styles/cookie.css';
+import './cookies/cookieconsent-config.js';
 
 const init = () => {
   if (window.location.pathname) {
