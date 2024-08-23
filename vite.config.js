@@ -19,9 +19,9 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'src/scripts/main.js'),
       },
-      output: {},
       preserveEntrySignatures: 'exports-only',
       external: ['jquery'],
     },
   },
+  publicDir: 'src/assets',
 });
