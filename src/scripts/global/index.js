@@ -108,7 +108,7 @@ export const initCustomVideoControls = () => {
   const playButtonIcon = playButton.querySelector('.play-icon');
   const pauseButtonIcon = playButton.querySelector('.pause-icon');
 
-  if (playButtonIcon || !pauseButtonIcon) return;
+  if (!playButtonIcon || !pauseButtonIcon) return;
 
   let isPlaying = false;
 
