@@ -99,3 +99,87 @@ export const initSwipers = () => {
     });
   }
 };
+
+export const initCustomVideoControls = () => {
+  const video = document.querySelector('video.vsl_video');
+  if (!video) return;
+  const playButton = document.querySelector('.vsl_video_play_button');
+  if (!playButton) return;
+  const playButtonIcon = playButton.querySelector('.play-icon');
+  const pauseButtonIcon = playButton.querySelector('.pause-icon');
+
+  if (playButtonIcon || !pauseButtonIcon) return;
+
+  let isPlaying = false;
+
+  playButton.addEventListener('click', () => {
+    if (isPlaying) {
+      video.pause();
+    } else {
+      video.play();
+    }
+    pauseButtonIcon.classList.toggle('hide');
+    playButtonIcon.classList.toggle('hide');
+    video.controls = !isPlaying;
+    isPlaying = !isPlaying;
+  });
+};
+
+export const initHeaderListeners = () => {
+  const header = document.querySelector('.nav_component');
+  if (!header) return;
+
+  let lastScrollY = window.scrollY;
+  let ticking = false;
+
+  const updateHeader = () => {
+    const headerHeight = header.offsetHeight;
+    if (window.scrollY > headerHeight) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+    lastScrollY = window.scrollY;
+    ticking = false;
+  };
+
+  const onScroll = () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        updateHeader();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  };
+
+  window.addEventListener('scroll', onScroll);
+  window.addEventListener('resize', updateHeader);
+
+  // Initial check
+  updateHeader();
+};
+
+export const onMenuOpenListener = () => {
+  const navButton = document.querySelector('.nav_button');
+  if (!navButton) return;
+
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+        const isOpen = navButton.classList.contains('w--open');
+        const header = document.querySelector('.nav_component');
+        const navComponent = document.querySelector('.nav_component');
+        if (isOpen && !header.classList.contains('scrolled')) {
+          navComponent.classList.toggle('bg-white');
+        } else {
+          setTimeout(() => {
+            navComponent.classList.remove('bg-white');
+          }, 450);
+        }
+      }
+    });
+  });
+
+  observer.observe(navButton, { attributes: true });
+};
